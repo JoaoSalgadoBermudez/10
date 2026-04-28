@@ -34,7 +34,6 @@ def remover_dado(dados_rolados, dados_no_estoque, dado_para_remover):
 
     return [dados_rolados, novo_estoque]
 
-
 def calcula_pontos_regra_simples(dados_rolados):
     resultado = {1:0, 2:0, 3:0, 4:0, 5:0, 6:0}
 
