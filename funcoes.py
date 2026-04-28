@@ -20,3 +20,16 @@ def guardar_dado(dados_rolados, dados_no_estoque, dado_para_guardar):
     dados_no_estoque.append(dados_rolados[dado_para_guardar])
 
     return [novo_rolados, dados_no_estoque]
+
+def remover_dado(dados_rolados, dados_no_estoque, dado_para_remover):
+    novo_estoque = []
+    i = 0
+
+    while i < len(dados_no_estoque):
+        if i != dado_para_remover:
+            novo_estoque.append(dados_no_estoque[i])
+        i = i + 1
+
+    dados_rolados.append(dados_no_estoque[dado_para_remover])
+
+    return [dados_rolados, novo_estoque]
