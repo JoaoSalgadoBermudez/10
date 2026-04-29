@@ -44,3 +44,45 @@ def calcula_pontos_regra_simples(dados_rolados):
         i = i + 1
 
     return resultado
+
+def calcula_pontos_soma(dados_rolados):
+    soma = 0
+    i = 0
+
+    while i < len(dados_rolados):
+        soma = soma + dados_rolados[i]
+        i = i + 1
+
+    return soma 
+def calcula_pontos_sequencia_baixa(dados_rolados):
+    te1 = 0
+    te2 = 0
+    te3 = 0
+    te4 = 0
+    te5 = 0
+    te6 = 0
+
+    i = 0
+    while i < len(dados_rolados):
+        if dados_rolados[i] == 1:
+            te1 = 1
+        if dados_rolados[i] == 2:
+            te2 = 1
+        if dados_rolados[i] == 3:
+            te3 = 1
+        if dados_rolados[i] == 4:
+            te4 = 1
+        if dados_rolados[i] == 5:
+            te5 = 1
+        if dados_rolados[i] == 6:
+            te6 = 1
+        i = i + 1
+
+    if te1 and te2 and te3 and te4:
+        return 15
+    if te2 and te3 and te4 and te5:
+        return 15
+    if te3 and te4 and te5 and te6:
+        return 15
+
+    return 0  
