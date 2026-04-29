@@ -178,3 +178,30 @@ def calcula_pontos_quadra (dados_rolados):
         return soma
             
     return 0
+
+def calcula_pontos_quina (dados_rolados):
+    te1 = 0
+    te2 = 0
+    te3 = 0
+    te4 = 0
+    te5 = 0
+    te6 = 0
+    
+    for face in dados_rolados:
+        if face == 1:
+            te1 +=1
+        if face == 2:
+            te2 +=1
+        if face == 3:
+            te3 +=1
+        if face == 4:
+            te4 +=1
+        if face == 5:
+            te5 +=1
+        if face == 6:
+            te6 +=1
+    
+    if te1 >= 5 or te2 >= 5 or te3 >= 5 or te4 >= 5 or te5 >= 5 or te6 >= 5:
+        return 50
+            
+    return 0
