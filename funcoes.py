@@ -205,3 +205,26 @@ def calcula_pontos_quina (dados_rolados):
         return 50
             
     return 0
+
+
+def calcula_pontos_regra_avancada (dados_rolados):
+    dic_regra_avancada = {}
+    dic_regra_avancada ["cinco_iguais"] = calcula_pontos_quina (dados_rolados)
+    dic_regra_avancada ["full_house"] = calcula_pontos_full_house (dados_rolados)
+    dic_regra_avancada ["quadra"] = calcula_pontos_quadra (dados_rolados)
+    dic_regra_avancada ["sem_combinacao"] = calcula_pontos_soma (dados_rolados)
+    dic_regra_avancada ["sequencia_alta"] = calcula_pontos_sequencia_alta (dados_rolados)
+    dic_regra_avancada ["sequencia_baixa"] = calcula_pontos_sequencia_baixa (dados_rolados)
+
+    return dic_regra_avancada
+
+
+def faz_jogada (dados_rolados, categoria, dic_cartela_pontos):
+    if categoria in ["full_house", "cinco_iguais", "quadra", "sequencia_alta", "sequencia_baixa",  "sem_combinacao"]:
+        dic_cartela_pontos ["regra_avancada"][categoria] = calcula_pontos_regra_avancada(dados_rolados) [categoria]
+
+    else:
+        categoria = int(categoria)
+        dic_cartela_pontos ["regra_simples"][categoria]= calcula_pontos_regra_simples(dados_rolados) [categoria]
+    
+    return dic_cartela_pontos
