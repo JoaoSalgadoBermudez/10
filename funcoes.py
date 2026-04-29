@@ -116,4 +116,35 @@ def calcula_pontos_sequencia_alta (dados_rolados):
     if te2 and te3 and te4 and te5 and te6:
         return 30
 
-    return 0  
+    return 0 
+
+def calcula_pontos_full_house (dados_rolados):
+    te1 = 0
+    te2 = 0
+    te3 = 0
+    te4 = 0
+    te5 = 0
+    te6 = 0
+
+    soma = 0
+    
+    for face in dados_rolados:
+        if face == 1:
+            te1 +=1
+        if face == 2:
+            te2 +=1
+        if face == 3:
+            te3 +=1
+        if face == 4:
+            te4 +=1
+        if face == 5:
+            te5 +=1
+        if face == 6:
+            te6 +=1
+        soma += face
+    
+    if 3 in [te1, te2, te3, te4, te5, te6]:
+        if 2 in [te1, te2, te3, te4, te5, te6]:
+            return soma
+            
+    return 0
