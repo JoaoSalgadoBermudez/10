@@ -148,3 +148,33 @@ def calcula_pontos_full_house (dados_rolados):
             return soma
             
     return 0
+
+def calcula_pontos_quadra (dados_rolados):
+    te1 = 0
+    te2 = 0
+    te3 = 0
+    te4 = 0
+    te5 = 0
+    te6 = 0
+
+    soma = 0
+    
+    for face in dados_rolados:
+        if face == 1:
+            te1 +=1
+        if face == 2:
+            te2 +=1
+        if face == 3:
+            te3 +=1
+        if face == 4:
+            te4 +=1
+        if face == 5:
+            te5 +=1
+        if face == 6:
+            te6 +=1
+        soma += face
+    
+    if te1 >= 4 or te2 >= 4 or te3 >= 4 or te4 >= 4 or te5 >= 4 or te6 >= 4:
+        return soma
+            
+    return 0
